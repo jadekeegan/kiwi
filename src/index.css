@@ -32,13 +32,13 @@ router-outlet + *  {
 /* Text */
 
 h1 {
-  font-size: 4.75vh;
+  font-size: 5vh;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 p {
-  font-size: 2.75vh;
+  font-size: 3vh;
   margin-bottom: 1.5rem;
 }
 
@@ -71,7 +71,7 @@ label {
   margin-bottom: 4px;
   margin-top: 16px;
   display: block;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 /* Button */
@@ -81,7 +81,7 @@ label {
   padding: 1.5vh 2.5vh;
   border-radius: 5vh;
   
-  font-size: 2.75vh;
+  font-size: 3vh;
   font-weight: 700;
 
   cursor: pointer;
