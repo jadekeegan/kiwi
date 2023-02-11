@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import "./home.component.css"
+import "./signin.component.css"
 
 export default class SignIn extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ export default class SignIn extends Component {
 
   render() {
     return (
-      <div>
+      <div class="signin-page">
         <h1>Sign In</h1>
         <form onSubmit={this.handleSubmit}>
         <label>
@@ -41,6 +41,8 @@ export default class SignIn extends Component {
           Password:
           <input name="password" type="text" value={this.state.value} onChange={this.handleInputChange} />
         </label>
+        <br>
+        </br>
           <Link to="/dashboard">
             <input type="submit" value="Submit" />
           </Link>
