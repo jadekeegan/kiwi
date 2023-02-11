@@ -1,1 +1,1 @@
-# pearl-hacks-2023
+# Pearl Hacks 2023
