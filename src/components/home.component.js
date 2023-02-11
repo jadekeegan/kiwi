@@ -6,13 +6,25 @@ export default class Home extends Component {
 
   render() {
     return (
+      
       <div class="home-page">
-        <h1>Welcome to Kiwi!</h1>
-        <p>Kiwi is an personal finance application built to make managing your budget and becoming financially literate easier!</p>
-        <Link to="/sign-up">
-          <button>Get Started!</button>
-        </Link>
+        <div class="welcome-info">
+          <h1>welcome to kiwi!</h1>
+          <p>kiwi is a personal finance application built to make managing your budget and becoming financially literate easier!</p>
+          <Link to="/sign-up">
+            <button>get started!</button>
+          </Link>
+        </div>
+
+        {/* <div class="about">
+          <h1>welcome to kiwi!</h1>
+          <p>kiwi is a personal finance application built to make managing your budget and becoming financially literate easier!</p>
+          <Link to="/sign-up">
+            <button>get started!</button>
+          </Link>
+        </div> */}
       </div>
+
     );
   }
 }

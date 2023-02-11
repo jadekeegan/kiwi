@@ -1,17 +1,21 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 * {
-  font-family: 'Roboto', Arial, sans-serif;
-  color: white;
+  font-family: 'Raleway', sans-serif;
+  color: #513A28;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
-  background: #2F3E46;
-  color: white;
+  background: #F5F3F0;
 }
 
 .container {
@@ -28,27 +32,21 @@ router-outlet + *  {
 /* Text */
 
 h1 {
-  font-size: 32px;
-  margin-bottom: 0;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-h1, h2 {
-  font-weight: 500;
+  font-size: 4.75vh;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 p {
-  font-size: 14px;
+  font-size: 2.75vh;
+  margin-bottom: 1.5rem;
 }
 
 /* Hyperlink */
 
 a {
   cursor: pointer;
-  color: #52796F;
+  color: #599365;
   text-decoration: none;
 }
 
@@ -79,19 +77,25 @@ label {
 /* Button */
 .button, button {
   display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border-radius: 2px;
-  font-size: 20px;
+  text-align: center;
+  padding: 1.5vh 2.5vh;
+  border-radius: 5vh;
+  
+  font-size: 2.75vh;
+  font-weight: 700;
+
   cursor: pointer;
-  background-color: #52796F;
-  color: white;
+  background-color: #A0BF8A;
+  color: #513A28;
   border: none;
 }
 
 .button:hover, button:hover {
   opacity: 0.8;
   font-weight: normal;
+
+  background-color: #1a312b;
+  color: #F5F3F0;
 }
 
 .button:disabled, button:disabled {

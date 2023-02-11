@@ -1,4 +1,13 @@
 .home-page {
   margin: auto;
   width: 50%;
+
+  position: fixed;
+  top: 25%;
+  left: 25%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
