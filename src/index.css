@@ -71,7 +71,7 @@ label {
   margin-bottom: 4px;
   margin-top: 16px;
   display: block;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 /* Button */
