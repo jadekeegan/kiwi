@@ -4,6 +4,7 @@ import Home from "./components/home.component";
 import SignUp from "./components/signup.component";
 import SignIn from "./components/signin.component";
 import Navbar from "./components/home-navbar.component"
+import Dashboard from "./components/dashboard.component";
 
 function App() {
   return (
