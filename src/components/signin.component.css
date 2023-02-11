@@ -2,3 +2,29 @@
     margin: auto;
     width: 50%;
   }
+
+input[type=text]{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid #2d9fd9;
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    margin: 10px;
+}
+    
+input[type=text]:focus {
+    outline: none;
+}
+
+input[type="submit"]{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid #2d9fd9;
+    width: 100px;
+    height: 30px;
+    padding-left: 10px;
+    margin: 10px;
+}

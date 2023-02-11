@@ -34,11 +34,11 @@ export default class SignIn extends Component {
         <h1>Sign In</h1>
         <form onSubmit={this.handleSubmit}>
         <label>
-          Username:
-          <input name="username" type="text" value={this.state.value} onChange={this.handleInputChange} />
+          Username: 
+          <input name="username" type="text" placeholder="username or email" value={this.state.value} onChange={this.handleInputChange} />
         </label>
         <label>
-          Password:
+          Password: 
           <input name="password" type="text" value={this.state.value} onChange={this.handleInputChange} />
         </label>
         <br>
