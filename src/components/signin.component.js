@@ -16,7 +16,7 @@ const SignIn = ({setIsLoggedIn}) => {
     });
   }
 
-  login = async () => {
+  const login = async () => {
     const response = await fetch('http://localhost:5000/login', {
       method: 'GET',
       body: JSON.stringify({
