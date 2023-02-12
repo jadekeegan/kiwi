@@ -16,9 +16,13 @@ function App() {
 
   return (
    <BrowserRouter>
-    <PrivateNav />
-    <DashboardNav />
+    { isLoggedIn ? (  
+      <PrivateNav />
+    ): (<Navbar />)
+    }
 
+    <DashboardNav />
+    
     <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>

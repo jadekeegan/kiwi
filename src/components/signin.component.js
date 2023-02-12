@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import Dashboard from './dashboard.component';
+
 import "./signin.component.css"
 
-const SignIn = (setIsLoggedIn) => {
+const SignIn = ({setIsLoggedIn}) => {
   
 
   const handleInputChange = (event) => {
@@ -16,16 +16,17 @@ const SignIn = (setIsLoggedIn) => {
     });
   }
 
-  const handleSubmit = (event) => {
-    setIsLoggedIn(true)
+  const handleSubmit = useCallback(event => { 
     event.preventDefault();
-  }
+    setIsLoggedIn(true);
+  }, [setIsLoggedIn]);
 
     return (
       <div className="slide-up">
-        <p className="border">
+        <div className="border">
           <h1>welcome back!</h1>
           <p>please enter your details:</p>
+
           <form onSubmit={handleSubmit}>
             <label> 
               <input name="username" type="text" placeholder="username or email" onChange={handleInputChange} />
@@ -33,12 +34,11 @@ const SignIn = (setIsLoggedIn) => {
             <label>
               <input name="password" type="text" placeholder="password" onChange={handleInputChange} />
             </label>
-            <Link to="/dashboard">
-              <input type="submit" value="log in!" />
-            </Link>
+            <input type="submit" value="log in!"></input>
             <p className="body">don't have an account? <a className="body" href="/sign-up">sign up here!</a></p>
          </form>
-        </p>
+
+        </div>
       </div>
     );
   }
