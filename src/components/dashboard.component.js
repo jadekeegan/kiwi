@@ -4,7 +4,12 @@ import axios from 'axios'
 
 import "./dashboard.component.css"
 
+import CanvasJSReact from '../assets/canvasjs.react';
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
 let tableData = []
+let chartData = [0,0,0,0,0,0,0,0,0,0,0,0]
 
 const Dashboard = () => {
 	const [selectedFile, setSelectedFile] = useState();
@@ -24,6 +29,29 @@ const Dashboard = () => {
       selector: row => row.totalAmount,
   },
 ];
+
+const options = {
+  title: {
+    text: "Yearly Expense Summary"
+  },
+  data: [{				
+            type: "column",
+            dataPoints: [
+                { label: "January",  y: chartData[0]  },
+                { label: "February", y: chartData[1]  },
+                { label: "March", y: chartData[2]  },
+                { label: "April",  y: chartData[3]  },
+                { label: "May",  y: chartData[4]  },
+                { label: "June",  y: chartData[5]  },
+                { label: "July",  y: chartData[6]  },
+                { label: "August",  y: chartData[7]  },
+                { label: "September",  y: chartData[8]  },
+                { label: "October",  y: chartData[9]  },
+                { label: "November",  y: chartData[10]  },
+                { label: "December",  y: chartData[11]  },
+            ]
+   }]
+}
 
 	const handleUpload = (event) => {
 		setSelectedFile(event.target.files[0]);
@@ -46,8 +74,10 @@ const Dashboard = () => {
         } 
       })
       console.log(res.data)
+      let date = new Date(Date.parse(res.data.date.data))
+      chartData[date.getMonth] += res.data.totalAmount.data
       tableData.push({
-        date: res.data.date.data ?? "N/A",
+        date: date.toLocaleDateString() ?? "N/A",
         merchantName: res.data.merchantName.data,
         totalAmount: res.data.totalAmount.data
       })
@@ -94,6 +124,8 @@ const Dashboard = () => {
             data={tableData}
         />
       </section>
+      <CanvasJSChart options = {options}
+        />
     </div>
 	)
 }
