@@ -25,8 +25,6 @@ function App() {
       <PrivateNav />
     ): (<Navbar />)
     }
-
-    <DashboardNav />
     
     <Routes>
         <Route path="/" element={<Home />}></Route>
