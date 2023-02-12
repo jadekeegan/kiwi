@@ -61,7 +61,7 @@ export default class SignIn extends Component {
            <form class="form" onSubmit={this.handleSubmit}>
           
             <input name="email" type="text" value={this.state.value} placeholder="email" onChange={this.handleInputChange} />
-            <input name="password" type="text" value={this.state.value} placeholder="password" onChange={this.handleInputChange} />
+            <input name="password" type="password" value={this.state.value} placeholder="password" onChange={this.handleInputChange} />
 
             <input type="submit" value="Submit" />
             <p className="body">don't have an account? <a className="body" href="/sign-up">sign up here!</a></p>
