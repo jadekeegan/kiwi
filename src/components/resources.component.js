@@ -8,7 +8,7 @@ render() {
     return (
         <div className='slide-up'>
             <div>
-                <h1>extra resources for your financial journey!</h1>
+                <h1 className="title">extra resources for your financial journey!</h1>
                 <p>
                     read a complete guide with <span> </span>
                     <a href="https://www.investopedia.com/personal-finance-4427760/">
