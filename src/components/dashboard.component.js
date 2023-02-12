@@ -65,26 +65,26 @@ const Dashboard = () => {
         <div>
           <h2>File Upload</h2>
           <div class="file-upload">
-          <input type="file" name="file" onChange={handleUpload} />
-          {isSelected ? (
+            <input type="file" name="file" onChange={handleUpload} />
+            {isSelected ? (
+              <div>
+                <p>Filename: {selectedFile.name}</p>
+                <p>Filetype: {selectedFile.type}</p>
+                <p>Size in bytes: {selectedFile.size}</p>
+                <p>
+                  lastModifiedDate:{' '}
+                  {selectedFile.lastModifiedDate.toLocaleDateString()}
+                </p>
+              </div>
+            ) : (
+              <p>Select a file to show details</p>
+            )}
+          </div>
             <div>
-              <p>Filename: {selectedFile.name}</p>
-              <p>Filetype: {selectedFile.type}</p>
-              <p>Size in bytes: {selectedFile.size}</p>
-              <p>
-                lastModifiedDate:{' '}
-                {selectedFile.lastModifiedDate.toLocaleDateString()}
-              </p>
+              <button class="submit-button" onClick={handleSubmit}>Submit</button>
             </div>
-          ) : (
-            <p>Select a file to show details</p>
-          )}
-          </div>
-          <div>
-            <button onClick={handleSubmit}>Submit</button>
-            </div>
-          </div>
-        </section>
+        </div>
+      </section>
 			
 
       <section className="expenses-section">
