@@ -1,11 +1,13 @@
 import { useState, React, useRef } from 'react';
 import DataTable from 'react-data-table-component';
-import axios from 'axios'
+import axios from 'axios';
+import DashboardNav from './dashboard-navbar.component';
 
 import "./dashboard.component.css"
 import chart from "./sample-chart.png";
 
 import CanvasJSReact from '../assets/canvasjs.react';
+
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 let tableData = []
@@ -111,29 +113,19 @@ const Dashboard = () => {
       setIsSelected(false);
     } catch (e) {
     }
-  };
-
-  return (
-    <div className="dashboard-container">
-      <h1>dashboard</h1>
-      <section id="file-upload-section">
+	};
+  
+	return (
+    <div>
+    <DashboardNav />
+		<div className="dashboard-container">
+      
+			<h1>dashboard</h1>
+			<section id="file-upload-section">
         <div>
           <h2>file upload</h2>
           <div class="file-upload">
             <input type="file" name="file" ref={ref} onChange={handleUpload} />
-            {isSelected ? (
-              <div>
-                <p>Filename: {selectedFile.name}</p>
-                <p>Filetype: {selectedFile.type}</p>
-                <p>Size in bytes: {selectedFile.size}</p>
-                <p>
-                  lastModifiedDate:{' '}
-                  {selectedFile.lastModifiedDate.toLocaleDateString()}
-                </p>
-              </div>
-            ) : (
-              <p>Select a file to show details</p>
-            )}
           </div>
           <div>
             <button class="submit-button" onClick={handleSubmit}>Submit</button>
@@ -143,11 +135,11 @@ const Dashboard = () => {
 
 
       <section id="expenses-section">
-        <h2>expenses</h2>
-        <DataTable className="data-table"
-          columns={columns}
-          data={tableData}
-          customStyles={customStyles}
+      <h2>expenses</h2>
+      <DataTable className="data-table"
+            columns={columns}
+            data={tableData}
+            customStyles={customStyles}
         />
       </section>
 
@@ -157,7 +149,8 @@ const Dashboard = () => {
       </section>
       <img src={chart} />
     </div>
-  )
+    </div>
+	)
 }
 
 export default Dashboard

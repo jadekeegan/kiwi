@@ -7,13 +7,9 @@ import EqualizerIcon from '@mui/icons-material/Equalizer';
 import "./dashboard-navbar.component.css"
 
 const DashboardNav = () => {
-  const location = useLocation();
-
   return (
     
     <div>
-    { location.pathname ==="/dashboard" && 
-
       <div className="dashboard-navbar">
         <div className="link">
           <Link to="/dashboard#file-upload-section" className="sidenav-link">
@@ -36,7 +32,6 @@ const DashboardNav = () => {
           </Link>
         </div>      
       </div>
-    }
     </div>
   );
 }
