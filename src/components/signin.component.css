@@ -1,8 +1,25 @@
-.signin-page {
+div.slide-up {
     padding-top: 10vh;
     margin: auto;
     width: 50%;
-}
+    height: 100%;
+  }
+  
+  div.slide-up p {
+    animation: 1.5s slide-up;
+    margin-top: 0%;
+  }
+  
+  @keyframes slide-up {
+    from {
+      margin-top: 100%;
+      height: 300%;
+    }
+    to {
+      margin-top: 0%;
+      height: 100%;
+    }
+  }
 
 h1 {
     font-size: 6vh;
@@ -45,10 +62,26 @@ input[type="submit"]{
     font-weight: 700;
     width: 15vh;
     height: 5vh;
-    padding-left: 10px;
-    margin: 10px;
+    padding-left: 2vh;
+    margin: 2vh;
     margin-top: 3vh;
     background-color: #A0BF8A;
     color: #513A28;
+}
+
+input[type="submit"]:hover {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid #446555;
+    font-size: 2vh;
+    font-weight: 700;
+    width: 15vh;
+    height: 5vh;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 3vh;
+    background-color: #1a312b;
+    color: #F5F3F0;
 }
 
