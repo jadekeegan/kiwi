@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import kiwiLogo from '../assets/kiwi-logo.png'
 
 import "./home-navbar.component.css"
 
@@ -12,7 +13,7 @@ const Navbar = () => {
         <li>
           <Link to="/" class="nav-link">
             <div class="brand">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Kiwi.svg" width="50" height="50"></img>
+              <img src={kiwiLogo} width="50" height="50"></img>
               <p class="brand-label">kiwi</p>
             </div>
           </Link>
