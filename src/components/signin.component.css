@@ -1,9 +1,12 @@
 div.slide-up {
-    padding-top: 10vh;
+    padding-top: 13vh;
     margin: auto;
     width: 50%;
     height: 100%;
     overflow: hidden;
+    position: absolute;
+    left: 25%;
+    z-index: 0;
   }
   
 div.slide-up p {
