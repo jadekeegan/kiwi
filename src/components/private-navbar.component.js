@@ -30,8 +30,6 @@ const PrivateNav = () => {
           </li>
         </div>
 
-        
-        
       </ul>
     </div>
   );
