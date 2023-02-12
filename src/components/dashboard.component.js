@@ -33,6 +33,14 @@ const Dashboard = () => {
   },
 ];
 
+const customStyles = {
+  table: {
+    style: {
+      backgroundColor: '#F5F3F0'
+    }
+  }
+}
+
 const options = {
   title: {
     text: "yearly expense summary",
@@ -122,6 +130,7 @@ const options = {
       <DataTable className="data-table"
             columns={columns}
             data={tableData}
+            customStyles={customStyles}
         />
       </section>
 

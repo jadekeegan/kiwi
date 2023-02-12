@@ -52,21 +52,19 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div className="sign-up">
-        <h1>Sign Up</h1>
-        <form onSubmit={this.handleSubmit}>
-          
-        <label>
-          Email:
-          <input name="email" type="text" value={this.state.value} onChange={this.handleInputChange} />
-        </label>
-        <label>
-          Password:
-          <input name="password" type="text" value={this.state.value} onChange={this.handleInputChange} />
-        </label>
+      <div className="slide-up">
+        <div className="border">
+          <h1>welcome to kiwi!</h1>
+          <p>please sign up here:</p>
+        <form className="form" onSubmit={this.handleSubmit}>
+                 
+        <input name="email" type="text" value={this.state.value} placeholder="email" onChange={this.handleInputChange} />
+        <input name="password" type="text" value={this.state.value} placeholder="password" onChange={this.handleInputChange} />
 
-          <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" />
+        <p className="body">already have an account? <a className="body" href="/sign-in">sign in here!</a></p>
         </form>
+        </div>
 
       </div>
     );
