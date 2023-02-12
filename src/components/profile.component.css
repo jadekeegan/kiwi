@@ -4,6 +4,7 @@
     
     top: 40%;
     left: 25%;
+    padding-top: 3vh;
 
 }
 
@@ -17,17 +18,28 @@
 
 .profile-title {
     padding-top: 3vh;
-    font-size: 4.5vh;
+    font-size: 2em;
 }
 
 .profile-subtitle {
-    padding-bottom: 2vh;
-    font-size: 3vh;
+    font-size: 1.25em;
+    margin-bottom: 0;
+    margin-right: 1rem;
 }
 
 .edit-button {
-    display: inline-block;
-    padding: 1.5vh;
-    margin-left: 2vh;
-    font-size: 2vh;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.fields {
+    font-size: 1em;
+}
+
+.settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2vh;
 }
