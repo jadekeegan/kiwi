@@ -16,8 +16,25 @@ const SignIn = ({setIsLoggedIn}) => {
     });
   }
 
-  const handleSubmit = useCallback(event => { 
+  login = async () => {
+    const response = await fetch('http://localhost:5000/login', {
+      method: 'GET',
+      body: JSON.stringify({
+        email: this.state.username // uhh idk if this is how to access the username or nah
+      })
+    })
+    
+    const body = await response.json();
+    if (response.status !== 200) {
+      throw Error(body.message) 
+    }
+    console.log(body);
+  };
+
+  const handleSubmit = useCallback(async event => { 
     event.preventDefault();
+    let result = await this.login();
+    // check if result.express is empty, if not, check if passwords match
     setIsLoggedIn(true);
   }, [setIsLoggedIn]);
 
