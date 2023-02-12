@@ -18,14 +18,24 @@ const Navbar = () => {
             </div>
           </Link>
         </li>
+
+        <div>
       
-        { location.pathname !=="/sign-in" && 
-        <li>
-          <Link to="/sign-in" class="nav-link">
-            <button class="nav-button">sign in</button>
-          </Link>
-        </li>
-        }
+          { (location.pathname !=="/sign-in") && 
+          <li>
+            <Link to="/sign-in" class="nav-link">
+              <button class="nav-button">sign in</button>
+            </Link>
+          </li>
+          }
+
+          <li>
+            <Link to="/resources" class="nav-link">
+              <button class="nav-button">resources</button>
+            </Link>
+          </li>
+
+        </div>
         
       </ul>
         

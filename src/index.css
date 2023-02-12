@@ -33,8 +33,8 @@ router-outlet + *  {
 
 h1 {
   font-size: 7em;
-  margin-bottom: 1rem;
   font-weight: 700;
+  padding-bottom: 3rem;
 }
 
 p {

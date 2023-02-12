@@ -1,5 +1,5 @@
 div.slide-up {
-  padding-top: 13vh;
+  padding-top: 15vh;
   margin: auto;
   width: 50%;
   height: 100%;
@@ -32,7 +32,7 @@ h1 {
 .border {
   border-width: 3px;
   border-radius: 20px;
-  padding: 10vh;
+  padding: 5vh;
   background-color: rgb(212, 221, 206);
 }
 
@@ -59,6 +59,21 @@ input[type=text]{
 }
   
 input[type=text]:focus {
+  outline: none;
+}
+
+input[type=password]{
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid #58b285;
+  width: 40vh;
+  height:5vh;
+  font-size: 2vh;
+  margin: 1vh;
+}
+  
+input[type=password]:focus {
   outline: none;
 }
 
