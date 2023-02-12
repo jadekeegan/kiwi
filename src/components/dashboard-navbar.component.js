@@ -16,14 +16,14 @@ const DashboardNav = () => {
 
       <div className="dashboard-navbar">
         <div className="link">
-          <Link to="/dashboard" className="sidenav-link">
+          <Link to="/dashboard#file-upload-section" className="sidenav-link">
             <UploadIcon className="icon"/>
             <button className="sidebar-button">upload<br />receipt</button>
           </Link>
         </div>
 
         <div className="link">
-          <Link to="/dashboard" className="sidenav-link">
+          <Link to="/dashboard#expenses-section" className="sidenav-link">
           <SavingsIcon className="icon"/>
           <button className="sidebar-button">budget</button>
           </Link>

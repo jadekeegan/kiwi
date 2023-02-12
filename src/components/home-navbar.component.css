@@ -1,6 +1,7 @@
-.home-navbar {
+.navbar {
   display: block;
   width: 100%;
+  position: fixed;
 }
 
 ul {

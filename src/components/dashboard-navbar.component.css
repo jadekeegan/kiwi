@@ -38,3 +38,7 @@
 .sidebar-button:hover {
   background-color: transparent;
 }
+
+html {
+  scroll-behavior: smooth;
+}
