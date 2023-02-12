@@ -1,11 +1,10 @@
-import { useState, React } from 'react';
+import { useState, React, useRef } from 'react';
 import DataTable from 'react-data-table-component';
 import axios from 'axios'
 
 import "./dashboard.component.css"
 
 import CanvasJSReact from '../assets/canvasjs.react';
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 let tableData = []
@@ -14,6 +13,7 @@ let chartData = [0,0,0,0,0,0,0,0,0,0,0,0]
 const Dashboard = () => {
 	const [selectedFile, setSelectedFile] = useState();
 	const [isSelected, setIsSelected] = useState(false);
+  const ref = useRef();
 
   const columns = [
     {
@@ -86,7 +86,7 @@ console.log(chartData)
         merchantName: res.data.merchantName.data,
         totalAmount: res.data.totalAmount.data
       })
-      console.log(tableData)
+      ref.current.value = ""
       setIsSelected(false);
     } catch (e) {
       console.error(e);
@@ -100,7 +100,7 @@ console.log(chartData)
         <div>
           <h2>File Upload</h2>
           <div class="file-upload">
-            <input type="file" name="file" onChange={handleUpload} />
+            <input type="file" name="file" ref={ref} onChange={handleUpload} />
             {isSelected ? (
               <div>
                 <p>Filename: {selectedFile.name}</p>
