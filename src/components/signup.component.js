@@ -8,18 +8,31 @@ export default class SignUp extends Component {
 
   componentDidMount() {
     this.callBackendAPI()
-      .then(res => this.setState({ data: res.express }))
-      .catch(err => console.log(err));
   }
 
   callBackendAPI = async () => {
-    const response = await fetch('http://localhost:5000/express_backend');
+    // const response = await fetch('http://localhost:5000/', {
+    //   method: 'POST'
+    // })
+    // .then((response) => {
+    //   return response.json();
+    // })
+    // .then((json) => {
+    //   console.log(json);
+    // });
+    const response = await fetch('http://localhost:5000/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: "test@gmail.com",
+        password: "password123"
+      })
+    })
+    
     const body = await response.json();
-
     if (response.status !== 200) {
       throw Error(body.message) 
     }
-    return body;
+    console.log(body);
   };
 
   render() {
