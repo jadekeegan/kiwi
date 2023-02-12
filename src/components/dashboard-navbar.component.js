@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { useLocation, Link } from "react-router-dom";
+import UploadIcon from '@mui/icons-material/Upload';
+import SavingsIcon from '@mui/icons-material/Savings';
+import EqualizerIcon from '@mui/icons-material/Equalizer';
 
 import "./dashboard-navbar.component.css"
 
@@ -7,28 +10,32 @@ const DashboardNav = () => {
   const location = useLocation();
 
   return (
-    <div class="dashboard-navbar">
-    { location.pathname ==="/dashboard" && 
     
-      <ul>
-        <li>
-          <Link to="/upload" class="nav-link">
-            <button class="nav-button">upload a receipt</button>
-          </Link>
-        </li>
+    <div>
+    { location.pathname ==="/dashboard" && 
 
-        <li>
-          <Link to="/budget" class="nav-link">
-            <button class="nav-button">budget</button>
+      <div className="dashboard-navbar">
+        <div className="link">
+          <Link to="/dashboard#file-upload-section" className="sidenav-link">
+            <UploadIcon className="icon"/>
+            <button className="sidebar-button">upload<br />receipt</button>
           </Link>
-        </li>
+        </div>
+
+        <div className="link">
+          <Link to="/dashboard#expenses-section" className="sidenav-link">
+          <SavingsIcon className="icon"/>
+          <button className="sidebar-button">budget</button>
+          </Link>
+        </div>
         
-        <li>
-          <Link to="/analytics" class="nav-link">
-            <button class="nav-button">analytics</button>
+        <div className="link">
+          <Link to="/dashboard" className="sidenav-link">
+            <EqualizerIcon className="icon"/>
+            <button className="sidebar-button">analytics</button>
           </Link>
-        </li>      
-      </ul>
+        </div>      
+      </div>
     }
     </div>
   );

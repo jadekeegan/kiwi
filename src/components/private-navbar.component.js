@@ -5,7 +5,7 @@ import "./home-navbar.component.css"
 
 const PrivateNav = () => {
   return (
-    <div class="private-navbar">
+    <div class="navbar">
       <ul>
         <li>
           <Link to="/" class="nav-link">
@@ -30,8 +30,6 @@ const PrivateNav = () => {
           </li>
         </div>
 
-        
-        
       </ul>
     </div>
   );
