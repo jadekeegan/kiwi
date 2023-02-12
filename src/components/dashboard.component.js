@@ -36,22 +36,27 @@ const options = {
   },
   data: [{				
             type: "column",
+            axisX:{
+              interval: 1,
+   intervalType: "month",
+            },
             dataPoints: [
-                { label: "January",  y: chartData[0]  },
-                { label: "February", y: chartData[1]  },
-                { label: "March", y: chartData[2]  },
-                { label: "April",  y: chartData[3]  },
-                { label: "May",  y: chartData[4]  },
-                { label: "June",  y: chartData[5]  },
-                { label: "July",  y: chartData[6]  },
-                { label: "August",  y: chartData[7]  },
-                { label: "September",  y: chartData[8]  },
-                { label: "October",  y: chartData[9]  },
-                { label: "November",  y: chartData[10]  },
-                { label: "December",  y: chartData[11]  },
+                { x: new Date(2022, 0),  y: chartData[0]  },
+                { x: new Date(2022, 1), y: chartData[1]  },
+                { x: new Date(2022, 2), y: chartData[2]  },
+                { x: new Date(2022, 3),  y: chartData[3]  },
+                { x: new Date(2022, 4),  y: chartData[4]  },
+                { x: new Date(2022, 5),  y: chartData[5]  },
+                { x: new Date(2022, 6),  y: chartData[6]  },
+                { x: new Date(2022, 7),  y: chartData[7]  },
+                { x: new Date(2022, 8),  y: chartData[8]  },
+                { x: new Date(2022, 9),  y: chartData[9]  },
+                { x: new Date(2022, 10),  y: chartData[10]  },
+                { x: new Date(2022, 11),  y: chartData[11]  },
             ]
    }]
 }
+console.log(chartData)
 
 	const handleUpload = (event) => {
 		setSelectedFile(event.target.files[0]);
@@ -75,7 +80,7 @@ const options = {
       })
       console.log(res.data)
       let date = new Date(Date.parse(res.data.date.data))
-      chartData[date.getMonth] += res.data.totalAmount.data
+      chartData[date.getMonth()] += res.data.totalAmount.data
       tableData.push({
         date: date.toLocaleDateString() ?? "N/A",
         merchantName: res.data.merchantName.data,
