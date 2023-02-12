@@ -1,4 +1,4 @@
-div.slide-up {  
+div.resources-slide {  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,14 +9,15 @@ div.slide-up {
     padding-top: 0vh;
     background-color: rgb(212, 221, 206);
     margin: auto;
-    margin-top: 5vh;
+
+    position: absolute;
     width: 50%;
     height: 60%;
     left: 25%;
-    top: 10%;
+    top: 20%;
   }
   
-div.slide-up p {
+div.resources-slide p {
   animation: 1s slide-up;
   margin-top: 0%;
 }

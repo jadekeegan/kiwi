@@ -6,7 +6,7 @@ import "./resources.component.css"
 export default class Resources extends Component {
 render() {
     return (
-        <div className='slide-up'>
+        <div className='resources-slide'>
             <div>
                 <h1 className="title">extra resources for your financial journey!</h1>
                 <p>
