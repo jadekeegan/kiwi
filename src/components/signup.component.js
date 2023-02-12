@@ -27,12 +27,6 @@ export default class SignUp extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     this.register();
-    // let data = await this.register(() => {
-    //   console.log(data.id);
-    //   history.push('/dashboard/' + data.id);
-    //   window.location.reload(false);
-    //   console.log("do i ever get here");
-    // });
   }
 
   register = async () => {
@@ -52,9 +46,6 @@ export default class SignUp extends Component {
     history.push('/dashboard/' + body.id);
     window.location.reload(false);
     return body;
-    // history.push('/dashboard/' + body.id);
-    // window.location.reload(false);
-   // return response;
   };
 
   render() {

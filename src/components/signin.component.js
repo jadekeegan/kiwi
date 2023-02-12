@@ -33,7 +33,9 @@ const SignIn = ({setIsLoggedIn}) => {
 
   const handleSubmit = useCallback(async event => { 
     event.preventDefault();
-    let result = await this.login();
+    console.log(this.state.username);
+    // let result = await this.login();
+    // console.log(result);
     // check if result.express is empty, if not, check if passwords match
     setIsLoggedIn(true);
   }, [setIsLoggedIn]);
