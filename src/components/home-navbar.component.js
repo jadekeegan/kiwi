@@ -7,7 +7,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <div class="home-navbar">
+    <div class="navbar">
       <ul>
         <li>
           <Link to="/" class="nav-link">
