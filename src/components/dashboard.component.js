@@ -1,4 +1,4 @@
-import { useState, React } from 'react';
+import { useState, React, useRef } from 'react';
 import DataTable from 'react-data-table-component';
 import axios from 'axios'
 
@@ -6,7 +6,6 @@ import "./dashboard.component.css"
 import chart from "./sample-chart.png";
 
 import CanvasJSReact from '../assets/canvasjs.react';
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 let tableData = []
@@ -15,6 +14,7 @@ let chartData = [0,0,0,0,0,0,0,0,0,0,0,0]
 const Dashboard = () => {
 	const [selectedFile, setSelectedFile] = useState();
 	const [isSelected, setIsSelected] = useState(false);
+  const ref = useRef();
 
   const columns = [
     {
@@ -90,6 +90,7 @@ const options = {
         merchantName: res.data.merchantName.data,
         totalAmount: res.data.totalAmount.data
       })
+      ref.current.value = ""
       setIsSelected(false);
     } catch (e) {
     }
@@ -102,7 +103,20 @@ const options = {
         <div>
           <h2>file upload</h2>
           <div class="file-upload">
-            <input type="file" name="file" onChange={handleUpload} />
+            <input type="file" name="file" ref={ref} onChange={handleUpload} />
+            {isSelected ? (
+              <div>
+                <p>Filename: {selectedFile.name}</p>
+                <p>Filetype: {selectedFile.type}</p>
+                <p>Size in bytes: {selectedFile.size}</p>
+                <p>
+                  lastModifiedDate:{' '}
+                  {selectedFile.lastModifiedDate.toLocaleDateString()}
+                </p>
+              </div>
+            ) : (
+              <p>Select a file to show details</p>
+            )}
           </div>
             <div>
               <button class="submit-button" onClick={handleSubmit}>Submit</button>
