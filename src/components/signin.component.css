@@ -1,5 +1,5 @@
 div.slide-up {
-    padding-top: 13vh;
+    padding-top: 15vh;
     margin: auto;
     width: 50%;
     height: 100%;
@@ -32,7 +32,7 @@ h1 {
 .border {
     border-width: 3px;
     border-radius: 20px;
-    padding: 10vh;
+    padding: 5vh;
     background-color: rgb(212, 221, 206);
 }
 
