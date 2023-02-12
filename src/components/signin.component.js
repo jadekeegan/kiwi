@@ -58,7 +58,7 @@ export default class SignIn extends Component {
             <h1>welcome back!</h1>
             <p>please enter your details:</p>
 
-           <form onSubmit={this.handleSubmit}>
+           <form class="form" onSubmit={this.handleSubmit}>
           
             <input name="email" type="text" value={this.state.value} placeholder="email" onChange={this.handleInputChange} />
             <input name="password" type="text" value={this.state.value} placeholder="password" onChange={this.handleInputChange} />
