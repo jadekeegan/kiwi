@@ -8,11 +8,13 @@ import Profile from "./components/profile.component";
 
 import PrivateNav from "./components/private-navbar.component";
 import Navbar from "./components/home-navbar.component";
+import DashboardNav from "./components/dashboard-navbar.component";
 
 function App() {
   return (
    <BrowserRouter>
     <PrivateNav />
+    <DashboardNav />
 
     <Routes>
         <Route path="/" element={<Home />}></Route>

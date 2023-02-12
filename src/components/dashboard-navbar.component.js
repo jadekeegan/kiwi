@@ -1,31 +1,37 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
-import "./home-navbar.component.css"
+import "./dashboard-navbar.component.css"
 
 const DashboardNav = () => {
+  const location = useLocation();
+
   return (
-    <div class="home-navbar">
+    <div class="dashboard-navbar">
+    { location.pathname ==="/dashboard" && 
+    
       <ul>
         <li>
-          <Link to="/" class="nav-link">
-            <div class="brand">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Kiwi.svg" width="50" height="50"></img>
-              <p class="brand-label">kiwi</p>
-            </div>
+          <Link to="/upload" class="nav-link">
+            <button class="nav-button">upload a receipt</button>
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/budget" class="nav-link">
+            <button class="nav-button">budget</button>
           </Link>
         </li>
         
         <li>
-          <Link to="/sign-in" class="nav-link">
-            <button class="nav-button">sign in</button>
+          <Link to="/analytics" class="nav-link">
+            <button class="nav-button">analytics</button>
           </Link>
-        </li>
-        
+        </li>      
       </ul>
-        
+    }
     </div>
   );
 }
 
-export default Navbar;
+export default DashboardNav;
