@@ -22,8 +22,8 @@ const SignIn = (setIsLoggedIn) => {
   }
 
     return (
-      <div class="signin-page">
-        <p class="border">
+      <div className="slide-up">
+        <p className="border">
           <h1>welcome back!</h1>
           <p>please enter your details:</p>
           <form onSubmit={handleSubmit}>
@@ -36,7 +36,7 @@ const SignIn = (setIsLoggedIn) => {
             <Link to="/dashboard">
               <input type="submit" value="log in!" />
             </Link>
-            <p class="body">don't have an account? <a class="body" href="/sign-up">sign up here!</a></p>
+            <p className="body">don't have an account? <a className="body" href="/sign-up">sign up here!</a></p>
          </form>
         </p>
       </div>
