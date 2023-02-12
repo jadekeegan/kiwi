@@ -3,23 +3,24 @@ div.slide-up {
     margin: auto;
     width: 50%;
     height: 100%;
+    overflow: hidden;
   }
   
-  div.slide-up p {
-    animation: 1.5s slide-up;
+div.slide-up p {
+  animation: 1.5s slide-up;
+  margin-top: 0%;
+}
+  
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+  to {
     margin-top: 0%;
+    height: 100%;
   }
-  
-  @keyframes slide-up {
-    from {
-      margin-top: 100%;
-      height: 300%;
-    }
-    to {
-      margin-top: 0%;
-      height: 100%;
-    }
-  }
+}
 
 h1 {
     font-size: 6vh;
