@@ -12,7 +12,12 @@ import DashboardNav from "./components/dashboard-navbar.component";
 import { useState, React } from 'react';
 
 function App() {
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const setLogInTrue = () => {
+    setIsLoggedIn(true);
+  }
 
   return (
    <BrowserRouter>
@@ -26,7 +31,7 @@ function App() {
     <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route path="/sign-in" element={<SignIn setIsLoggedIn={setIsLoggedIn}/>}></Route>
+        <Route path="/sign-in" element={<SignIn setLogInTrue={setLogInTrue}/>}></Route>
         <Route path="/dashboard/:id" element={<Dashboard />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
     </Routes>

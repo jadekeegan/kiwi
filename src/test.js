@@ -12,7 +12,8 @@ const { Client } = require("pg");
     // CREATE the messages table
     "CREATE TABLE IF NOT EXISTS profiles (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), email STRING, password STRING)",
     // INSERT a row into the messages table
-    //"INSERT INTO profiles (email, password) VALUES ('test', 'test123') RETURNING id",
+    "INSERT INTO profiles (email, password) VALUES ('brta', 'cisco123') RETURNING id",
+    "SELECT * FROM profiles WHERE email IN ('brta1')"
   ];
 
   try {
