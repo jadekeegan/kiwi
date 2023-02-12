@@ -12,6 +12,8 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 let tableData = []
 let chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+let sustainabilityCounter = 0;
+let sustainabilityTotal = 0;
 
 const Dashboard = () => {
   const [selectedFile, setSelectedFile] = useState();
@@ -119,6 +121,9 @@ const Dashboard = () => {
       let sustainability = "Unavailable"
       if (response.data[0]) {
         sustainability = response.data[0].environment_level
+        sustainabilityCounter +=1;
+        sustainabilityTotal += response.data[0].environment_score
+
       }
       tableData.push({
         date: date.toLocaleDateString() ?? "N/A",
@@ -162,6 +167,7 @@ const Dashboard = () => {
 
       <section id="analytics-section">
         <h2>analytics</h2>
+        <h3>Your sustainability score: {sustainabilityTotal/sustainabilityCounter/10 || 0}%</h3>
         <CanvasJSChart options={options} />
       </section>
       <img src={chart} />
