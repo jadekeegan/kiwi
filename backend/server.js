@@ -35,22 +35,8 @@ loginUser = async (email) => {
         })().catch((err) => console.log(err.stack));
 }
 
-registerUser = async (email, password) => {
-    (async () => {
-    const client = new Client({
-        connectionString: process.env.DATABASE_URL,
-        application_name: "$ kiwi"
-    });
-
-    try {
-        await client.connect();
-        let result = await client.query("INSERT INTO profiles (email, password) VALUES ('" + email + "', '" + password + "')");
-        await client.end();
-    } catch (err) {
-        console.log(`error connecting: ${err}`);
-    }
-
-    })().catch((err) => console.log(err.stack));
+registerUser = async (email, password, res) => {
+    
 }
 
 app.post("/register", async (req, res) => {
@@ -58,8 +44,24 @@ app.post("/register", async (req, res) => {
     email = user.email;
     password = user.password;
 
-    await registerUser(email, password);
-    res.send({express: "success!!!"});
+    //res.send(await registerUser(email, password, res));
+
+    (async () => {
+        const client = new Client({
+            connectionString: process.env.DATABASE_URL,
+            application_name: "$ kiwi"
+        });
+    
+        try {
+            await client.connect();
+            let result = await client.query("INSERT INTO profiles (email, password) VALUES ('" + email + "', '" + password + "') RETURNING id");
+            await client.end();
+            res.send(result.rows[0]);
+        } catch (err) {
+            console.log(`error connecting: ${err}`);
+        }
+    
+        })().catch((err) => console.log(err.stack));
 });
 
 app.listen(port, console.log(`Server is starting at ${port}`));

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import history from './history';
 
 export default class SignUp extends Component {
 
@@ -23,12 +24,19 @@ export default class SignUp extends Component {
     });
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
     this.register();
+    // let data = await this.register(() => {
+    //   console.log(data.id);
+    //   history.push('/dashboard/' + data.id);
+    //   window.location.reload(false);
+    //   console.log("do i ever get here");
+    // });
   }
 
   register = async () => {
+    console.log("about to fetch");
     const response = await fetch('http://localhost:5000/register', {
       method: 'POST',
       body: JSON.stringify({
@@ -36,12 +44,17 @@ export default class SignUp extends Component {
         password: this.state.password
       })
     })
-    
+    console.log("fetched data");
     const body = await response.json();
     if (response.status !== 200) {
       throw Error(body.message) 
     }
-    console.log(body);
+    history.push('/dashboard/' + body.id);
+    window.location.reload(false);
+    return body;
+    // history.push('/dashboard/' + body.id);
+    // window.location.reload(false);
+   // return response;
   };
 
   render() {
