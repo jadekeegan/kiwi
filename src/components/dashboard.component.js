@@ -24,8 +24,12 @@ const Dashboard = () => {
       selector: row => row.date,
     },
     {
-      name: 'Purchase',
+      name: 'Merchant',
       selector: row => row.merchantName,
+    },
+    {
+      name: 'Sustainability',
+      selector: row => row.sustainability,
     },
     {
       name: 'Amount',
@@ -102,11 +106,24 @@ const Dashboard = () => {
           'apikey': "2bc787c0aa6c11edae52ab17ace764b5"
         }
       })
+      const options2 = {
+        method: 'GET',
+        url: 'https://esgapiservice.com/api/authorization/search',
+        params: {q: res.data.merchantName.data, token: '1b6110541c3091e53e1e285f2ab1b95c'},
+      };
+      
+      const response = await axios.request(options2)
+      console.log(response)
       let date = new Date(Date.parse(res.data.date.data))
       chartData[date.getMonth()] += res.data.totalAmount.data
+      let sustainability = "Unavailable"
+      if (response.data[0]) {
+        sustainability = response.data[0].environment_level
+      }
       tableData.push({
         date: date.toLocaleDateString() ?? "N/A",
         merchantName: res.data.merchantName.data,
+        sustainability: sustainability,
         totalAmount: res.data.totalAmount.data
       })
       ref.current.value = ""
