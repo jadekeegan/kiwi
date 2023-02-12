@@ -1,17 +1,35 @@
 .signin-page {
+    padding-top: 10vh;
     margin: auto;
     width: 50%;
-  }
+}
+
+h1 {
+    font-size: 6vh;
+    padding-bottom: 2vh;
+}
+
+.border {
+    border-width: 3px;
+    border-radius: 20px;
+    padding: 10vh;
+    background-color: rgb(212, 221, 206);
+}
+
+.body {
+    padding-top: 1vh;
+    font-size: 2vh;
+}
 
 input[type=text]{
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    border: 1px solid #2d9fd9;
-    width: 250px;
-    height: 30px;
-    padding-left: 10px;
-    margin: 10px;
+    border: 1px solid #58b285;
+    width: 40vh;
+    height:5vh;
+    font-size: 2vh;
+    margin: 1vh;
 }
     
 input[type=text]:focus {
@@ -22,9 +40,15 @@ input[type="submit"]{
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    border: 1px solid #2d9fd9;
-    width: 100px;
-    height: 30px;
+    border: 1px solid #446555;
+    font-size: 2vh;
+    font-weight: 700;
+    width: 15vh;
+    height: 5vh;
     padding-left: 10px;
     margin: 10px;
+    margin-top: 3vh;
+    background-color: #A0BF8A;
+    color: #513A28;
 }
+
