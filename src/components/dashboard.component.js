@@ -2,9 +2,10 @@ import { useState, React, useRef } from 'react';
 import DataTable from 'react-data-table-component';
 import axios from 'axios';
 import DashboardNav from './dashboard-navbar.component';
+import kiwitree from '../assets/kiwi-img.png'
 
 import "./dashboard.component.css"
-import chart from "./sample-chart.png";
+import piechart from "../assets/pie-chart.png";
 
 import CanvasJSReact from '../assets/canvasjs.react';
 
@@ -59,9 +60,10 @@ const Dashboard = () => {
   const options = {
     title: {
       text: "yearly expense summary",
-      fontColor: "#1a312b",
+      fontColor: "#513A28",
       fontFamily: "Raleway",
-      fontWeight: "bold"
+      fontWeight: "bold",
+      fontSize: "20",
     },
     data: [{
       type: "column",
@@ -136,6 +138,13 @@ const Dashboard = () => {
     } catch (e) {
     }
 	};
+  let overCounter = 0;
+  let budget = 150;
+  for (let i = 0; i < chartData.length; i++) {
+    if (chartData[i] > budget) {
+      overCounter++;
+    }
+  }
   
 	return (
     <div>
@@ -143,9 +152,19 @@ const Dashboard = () => {
 		<div className="dashboard-container">
       
 			<h1>dashboard</h1>
+      <div className="topSection">
+        <div className="overview">
+        <img src={kiwitree} width="100" height="100"></img>
+        <div className="text">
+        <h3>Overall Rating: <span className="unbold">Good</span></h3>
+        <h3>Budget: <span className="unbold">$150/month</span></h3>
+        <h3>Sustainability Score: <span className="unbold">{sustainabilityTotal/sustainabilityCounter/10 || 0}%</span></h3>
+        <h3>Budgeting Score: <span className="unbold">{overCounter/12}%</span></h3>
+        </div>
+        </div>
 			<section id="file-upload-section">
         <div>
-          <h2>file upload</h2>
+          <h2>receipt upload</h2>
           <div class="file-upload">
             <input type="file" name="file" ref={ref} onChange={handleUpload} />
           </div>
@@ -154,6 +173,7 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
+      </div>
 
 
       <section id="expenses-section">
@@ -167,10 +187,10 @@ const Dashboard = () => {
 
       <section id="analytics-section">
         <h2>analytics</h2>
-        <h3>Your sustainability score: {sustainabilityTotal/sustainabilityCounter/10 || 0}%</h3>
         <CanvasJSChart options={options} />
       </section>
-      <img src={chart} />
+      <h2>your monthly expenses</h2>
+      <img src={piechart} width="500"/>
     </div>
     </div>
 	)
