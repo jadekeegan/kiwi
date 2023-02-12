@@ -22,6 +22,14 @@ p {
   justify-content: center;
 }
 
+.submit-button {
+  margin-top: 2vh;
+}
+
 #file-upload-section {
   margin-bottom: 10vh;
+}
+
+#analytics-section {
+  margin-top: 10vh;
 }

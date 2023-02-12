@@ -6,7 +6,6 @@ div.slide-up {
     overflow: hidden;
     position: absolute;
     left: 25%;
-    z-index: 0;
   }
   
 div.slide-up p {
@@ -40,6 +39,12 @@ h1 {
 .body {
     padding-top: 1vh;
     font-size: 2vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input[type=text]{

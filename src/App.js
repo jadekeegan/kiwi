@@ -4,7 +4,8 @@ import Home from "./components/home.component";
 import SignUp from "./components/signup.component";
 import SignIn from "./components/signin.component";
 import Dashboard from "./components/dashboard.component";
-import Profile from "./components/profile.component";
+import Profile from "./components/profile.component"
+import Resources from "./components/resources.component";
 
 import PrivateNav from "./components/private-navbar.component";
 import Navbar from "./components/home-navbar.component";
@@ -25,8 +26,6 @@ function App() {
       <PrivateNav />
     ): (<Navbar />)
     }
-
-    <DashboardNav />
     
     <Routes>
         <Route path="/" element={<Home />}></Route>
