@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import "./signin.component.css"
 
 const SignIn = ({setIsLoggedIn}) => {
-  
 
   const handleInputChange = (event) => {
     const target = event.target;
