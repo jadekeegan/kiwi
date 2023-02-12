@@ -7,7 +7,7 @@
 
 }
 
-.section{
+.section {
     border-width: 3px;
     border-radius: 20px;
     padding: 2vh;
@@ -15,18 +15,14 @@
     background-color: rgb(212, 221, 206);
 }
 
-h1 {
+.profile-title {
     padding-top: 3vh;
     font-size: 4.5vh;
 }
 
-h2 {
+.profile-subtitle {
     padding-bottom: 2vh;
     font-size: 3vh;
-}
-
-p {
-    font-size: 2.5vh;
 }
 
 .edit-button {

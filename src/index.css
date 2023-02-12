@@ -32,13 +32,13 @@ router-outlet + *  {
 /* Text */
 
 h1 {
-  font-size: 5vh;
+  font-size: 7em;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 p {
-  font-size: 3vh;
+  font-size: 1.5em;
   margin-bottom: 1.5rem;
 }
 
