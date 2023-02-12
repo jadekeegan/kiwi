@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { useLocation, Link } from "react-router-dom";
+// import MaterialIcon, {colorPalette} from 'material-icons-react';
 
 import "./dashboard-navbar.component.css"
 
@@ -7,28 +8,32 @@ const DashboardNav = () => {
   const location = useLocation();
 
   return (
-    <div class="dashboard-navbar">
-    { location.pathname ==="/dashboard" && 
     
-      <ul>
-        <li>
-          <Link to="/upload" class="nav-link">
-            <button class="nav-button">upload a receipt</button>
-          </Link>
-        </li>
+    <div>
+    { location.pathname ==="/dashboard" && 
 
-        <li>
-          <Link to="/budget" class="nav-link">
-            <button class="nav-button">budget</button>
+      <div className="dashboard-navbar">
+        <div className="link">
+          <Link to="/dashboard" className="nav-link">
+            {/* <MaterialIcon icon="upload" size="small" /> */}
+            <button className="nav-button">upload<br />receipt</button>
           </Link>
-        </li>
+        </div>
+
+        <div className="link">
+          <Link to="/dashboard" className="nav-link">
+          {/* <MaterialIcon icon="savings" size="small" /> */}
+          <button className="nav-button">budget</button>
+          </Link>
+        </div>
         
-        <li>
-          <Link to="/analytics" class="nav-link">
-            <button class="nav-button">analytics</button>
+        <div className="link">
+          <Link to="/dashboard" className="nav-link">
+            {/* <MaterialIcon icon="analytics" size="small" /> */}
+            <button className="nav-button">analytics</button>
           </Link>
-        </li>      
-      </ul>
+        </div>      
+      </div>
     }
     </div>
   );

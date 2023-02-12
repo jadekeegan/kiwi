@@ -75,7 +75,7 @@ label {
 }
 
 /* Button */
-.button, button {
+button {
   display: inline-flex;
   text-align: center;
   padding: 1.5vh 2.5vh;
@@ -90,7 +90,7 @@ label {
   border: none;
 }
 
-.button:hover, button:hover {
+button:hover {
   opacity: 0.8;
   font-weight: normal;
 
@@ -98,7 +98,7 @@ label {
   color: #F5F3F0;
 }
 
-.button:disabled, button:disabled {
+button:disabled {
   opacity: 0.5;
   cursor: auto;
 }
