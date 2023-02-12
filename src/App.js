@@ -33,6 +33,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn setLogInTrue={setLogInTrue}/>}></Route>
         <Route path="/dashboard/:id" element={<Dashboard />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/resources" element={<Resources />}></Route>
     </Routes>
     </BrowserRouter>
   );

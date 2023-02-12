@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
+import "./resources.component.css"
   
-  export default class Resources extends Component {
-    render() {
-        return (
+export default class Resources extends Component {
+render() {
+    return (
+        <div className='resource-page'>
             <div>
-              <p>
-                  <a href="https://herewecode.io/">
-                      Click to open HereWeCode (current tab)
-                  </a>
-              </p>
+                <h1></h1>
             </div>
-        )
+        </div>
+    )
     }
-  }
+}
