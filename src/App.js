@@ -9,8 +9,11 @@ import Profile from "./components/profile.component";
 import PrivateNav from "./components/private-navbar.component";
 import Navbar from "./components/home-navbar.component";
 import DashboardNav from "./components/dashboard-navbar.component";
+import { useState, React } from 'react';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
    <BrowserRouter>
     <PrivateNav />
@@ -19,7 +22,7 @@ function App() {
     <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route path="/sign-in" element={<SignIn />}></Route>
+        <Route path="/sign-in" element={<SignIn setIsLoggedIn={setIsLoggedIn}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
     </Routes>
