@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { useLocation, Link } from "react-router-dom";
-// import MaterialIcon, {colorPalette} from 'material-icons-react';
+import UploadIcon from '@mui/icons-material/Upload';
+import SavingsIcon from '@mui/icons-material/Savings';
+import EqualizerIcon from '@mui/icons-material/Equalizer';
 
 import "./dashboard-navbar.component.css"
 
@@ -14,23 +16,23 @@ const DashboardNav = () => {
 
       <div className="dashboard-navbar">
         <div className="link">
-          <Link to="/dashboard" className="nav-link">
-            {/* <MaterialIcon icon="upload" size="small" /> */}
-            <button className="nav-button">upload<br />receipt</button>
+          <Link to="/dashboard" className="sidenav-link">
+            <UploadIcon className="icon"/>
+            <button className="sidebar-button">upload<br />receipt</button>
           </Link>
         </div>
 
         <div className="link">
-          <Link to="/dashboard" className="nav-link">
-          {/* <MaterialIcon icon="savings" size="small" /> */}
-          <button className="nav-button">budget</button>
+          <Link to="/dashboard" className="sidenav-link">
+          <SavingsIcon className="icon"/>
+          <button className="sidebar-button">budget</button>
           </Link>
         </div>
         
         <div className="link">
-          <Link to="/dashboard" className="nav-link">
-            {/* <MaterialIcon icon="analytics" size="small" /> */}
-            <button className="nav-button">analytics</button>
+          <Link to="/dashboard" className="sidenav-link">
+            <EqualizerIcon className="icon"/>
+            <button className="sidebar-button">analytics</button>
           </Link>
         </div>      
       </div>
