@@ -11,8 +11,6 @@ app.use(express.json());
 app.get("/login/:email/", async (req, res) => {
     const email = req.params.email;
 
-    //res.send(await registerUser(email, password, res));
-
     (async () => {
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
@@ -30,29 +28,6 @@ app.get("/login/:email/", async (req, res) => {
     
         })().catch((err) => console.log(err.stack));
 });
-
-loginUser = async (email) => {
-    (async () => {
-        const client = new Client({
-            connectionString: process.env.DATABASE_URL,
-            application_name: "$ kiwi"
-        });
-    
-        try {
-            await client.connect();
-            let result = await client.query("SELECT * FROM profiles WHERE email=" + email);
-            // res.send(result.rows[0])
-            await client.end();
-        } catch (err) {
-            console.log(`error connecting: ${err}`);
-        }
-    
-        })().catch((err) => console.log(err.stack));
-}
-
-registerUser = async (email, password, res) => {
-    
-}
 
 app.post("/register", async (req, res) => {
     const user = req.body;

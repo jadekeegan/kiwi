@@ -33,7 +33,7 @@ export default class SignIn extends Component {
 
   login = async () => {
     console.log("about to fetch");
-    const response = await fetch('/login' + this.state.email, {method: 'GET',})
+    const response = await fetch('http://localhost:5000/login/' + this.state.email, {method: 'GET',})
     console.log("fetched data");
     try {
       const body = await response.json();
