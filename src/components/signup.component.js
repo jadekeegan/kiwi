@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import "./signup.component.css"
+
 export default class SignUp extends Component {
 
   constructor(props) {
@@ -46,7 +48,7 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div class="sign-up">
+      <div className="sign-up">
         <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit}>
           
