@@ -1,5 +1,29 @@
 .dashboard-navbar {
+  padding-top: 20vh;
+  list-style: none;
   display: flex;
+  position: fixed;
+  top: 10vh;
+  flex-direction: column;
+  height: 100%;
+  width: 12vw;
+  background-color: #c0daad;
+}
+
+.link {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+  margin-bottom: 10vh;
+  height: 6vh;
+}
+
+.nav-button {
+  width: 12vw;
+}
+
+.nav-button:hover {
+  width: 12vw;
+  background-color: #506144;
 }
