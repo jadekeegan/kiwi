@@ -61,7 +61,7 @@ const Dashboard = () => {
 	return (
 		<div className="dashboard-container">
 			<h1>Dashboard</h1>
-			<section className="file-upload-section">
+			<section id="file-upload-section">
         <div>
           <h2>File Upload</h2>
           <div class="file-upload">
@@ -87,7 +87,7 @@ const Dashboard = () => {
       </section>
 			
 
-      <section className="expenses-section">
+      <section id="expenses-section">
       <h2>Expenses</h2>
       <DataTable className="data-table"
             columns={columns}

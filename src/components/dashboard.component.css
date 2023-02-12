@@ -4,6 +4,10 @@
   width: 65%;
 }
 
+h1 {
+  margin-top: 10vh;
+}
+
 h2 {
   margin-bottom: 2vh;
 }
@@ -16,4 +20,8 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#file-upload-section {
+  margin-bottom: 100vh;
 }
