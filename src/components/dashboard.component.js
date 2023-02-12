@@ -1,6 +1,9 @@
 import { useState, React } from 'react';
 import DataTable from 'react-data-table-component';
 import axios from 'axios'
+
+import "./dashboard.component.css"
+
 let tableData = []
 
 const Dashboard = () => {
@@ -56,34 +59,42 @@ const Dashboard = () => {
 	};
 
 	return (
-		<div>
+		<div className="dashboard-container">
 			<h1>Dashboard</h1>
-			<div>
-      <h2>File Upload</h2>
-				<input type="file" name="file" onChange={handleUpload} />
-				{isSelected ? (
-					<div>
-						<p>Filename: {selectedFile.name}</p>
-						<p>Filetype: {selectedFile.type}</p>
-						<p>Size in bytes: {selectedFile.size}</p>
-						<p>
-							lastModifiedDate:{' '}
-							{selectedFile.lastModifiedDate.toLocaleDateString()}
-						</p>
-					</div>
-				) : (
-					<p>Select a file to show details</p>
-				)}
-				<div>
-					<button onClick={handleSubmit}>Submit</button>
-				</div>
-			</div>
+			<section className="file-upload-section">
+        <div>
+          <h2>File Upload</h2>
+          <div class="file-upload">
+          <input type="file" name="file" onChange={handleUpload} />
+          {isSelected ? (
+            <div>
+              <p>Filename: {selectedFile.name}</p>
+              <p>Filetype: {selectedFile.type}</p>
+              <p>Size in bytes: {selectedFile.size}</p>
+              <p>
+                lastModifiedDate:{' '}
+                {selectedFile.lastModifiedDate.toLocaleDateString()}
+              </p>
+            </div>
+          ) : (
+            <p>Select a file to show details</p>
+          )}
+          </div>
+          <div>
+            <button onClick={handleSubmit}>Submit</button>
+            </div>
+          </div>
+        </section>
+			
+
+      <section className="expenses-section">
       <h2>Expenses</h2>
-      <DataTable
+      <DataTable className="data-table"
             columns={columns}
             data={tableData}
         />
-		</div>
+      </section>
+    </div>
 	)
 }
 

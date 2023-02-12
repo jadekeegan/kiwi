@@ -1,0 +1,19 @@
+.dashboard-container {
+  margin: auto;
+  padding: 2rem;
+  width: 65%;
+}
+
+h2 {
+  margin-bottom: 2vh;
+}
+
+p {
+  margin-top: 1vh;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
