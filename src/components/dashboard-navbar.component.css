@@ -1,29 +1,40 @@
 .dashboard-navbar {
-  padding-top: 20vh;
+  padding-top: 10vh;
   list-style: none;
   display: flex;
   position: fixed;
   top: 10vh;
   flex-direction: column;
   height: 100%;
-  width: 12vw;
+  width: 7vw;
   background-color: #c0daad;
 }
 
-.link {
+.icon {
+  transform: scale(1.5);
+}
+
+.sidenav-link {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 10vh;
+  padding: 4rem 0rem;
   height: 6vh;
 }
 
-.nav-button {
-  width: 12vw;
+.sidenav-link:hover {
+  width: 7vw;
+  background-color: #506144;
 }
 
-.nav-button:hover {
+.sidebar-button {
   width: 12vw;
-  background-color: #506144;
+  font-size: 2vh;
+  background-color: transparent;
+  display: block;
+}
+
+.sidebar-button:hover {
+  background-color: transparent;
 }
